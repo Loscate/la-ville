@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
-import { cities, citiesToGuess } from "./cities_fr";
-import { useEffect, useState } from "react";
+import { citiesToGuess } from "./cities_fr";
+import { useEffect } from "react";
 import Game from "./components/Game";
 
 export const cityOfTheDay = (() => {
@@ -13,7 +13,6 @@ export const cityOfTheDay = (() => {
 
 function App() {
   useEffect(() => {});
-  console.log(cityOfTheDay);
   return (
     <div className="App">
       <Header />

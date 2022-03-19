@@ -1,0 +1,59 @@
+.Game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Game__answers {
+    color: white;
+    border: 1px solid white;
+    width: 90%;
+    box-sizing: border-box;
+    margin-top: 2vh;
+}
+
+.Game__answer_progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%
+}
+
+.Game__answer,
+.Game__answer_none {
+    position: relative;
+    height: 7vh;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+}
+
+
+.Game__answer>span,
+.Game__answer_none>span {
+    margin-left: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.Game__answer:last-child,
+.Game__answer_none:last-child {
+    border-bottom: none;
+}
+
+.Game__modal_win {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.Game__modal_win>h2 {
+    margin: 0;
+}
+
+.Game__share {
+    text-decoration: underline;
+    cursor: pointer;
+}

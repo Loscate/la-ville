@@ -1,0 +1,9 @@
+.Map {
+    height: 27vh;
+    margin-top: 10px;
+}
+
+.Map > svg {
+    height: 100%;
+    width: auto;
+}

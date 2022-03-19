@@ -3409,7 +3409,7 @@ export const cities = [
     population_proper: "70105",
   },
   {
-    city: "Saint-Nazaire",
+    city: "Saint-Nazaire (44)",
     lat: "47.2806",
     lng: "-2.2086",
     admin_name: "Pays de la Loire",
@@ -37011,7 +37011,7 @@ export const cities = [
     population_proper: "2718",
   },
   {
-    city: "Saint-Nazaire",
+    city: "Saint-Nazaire (66)",
     lat: "42.6675",
     lng: "2.9919",
     admin_name: "Occitanie",
@@ -73849,7 +73849,7 @@ export const cities = [
     population_proper: "1250",
   },
   {
-    city: "Saint-Nazaire",
+    city: "Saint-Nazaire (30)",
     lat: "44.1978",
     lng: "4.6247",
     admin_name: "Occitanie",
@@ -89666,7 +89666,7 @@ export const cities = [
     lat: "47.3587",
     lng: "1.7473",
     admin_name: "Centre-Val de Loire",
-    population: "",
-    population_proper: "",
+    population: "1000",
+    population_proper: "1000",
   },
 ];

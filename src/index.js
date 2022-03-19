@@ -4,6 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const today = new Date();
+today.setHours(0,0,0,0);
+console.log(localStorage)
+console.log(localStorage.getItem('LaVille_isWin'), localStorage.getItem('LaVille_lastConn') < today)
+if (localStorage.getItem('LaVille_isWin') && localStorage.getItem('LaVille_lastConn') < today) {
+  localStorage.setItem('LaVille_lastConn', new Date().valueOf())
+  localStorage.setItem('LaVille_isWin', false);
+  localStorage.setItem('LaVille_guessToday', null);
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -15,3 +25,11 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+/**
+ * TODO: 
+ * ajout des boutons tout en haut
+ * debugger l'autocomplete
+ * la carte avec les points (aucune idée de comment faire)
+ * 
+ */
