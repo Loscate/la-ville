@@ -30,9 +30,9 @@ function getStyleProgressBar(dist) {
 
 function Game() {
   const alreadyGuessed = localStorage.getItem('LaVille_guessToday');
-  const [citiesGuessed, setCitiesGuessed] = useState(alreadyGuessed ? JSON.parse(alreadyGuessed) : []);
+  const [citiesGuessed, setCitiesGuessed] = useState(alreadyGuessed && alreadyGuessed !== 'null' ? JSON.parse(alreadyGuessed) : []);
   const [isWin, setIsWin] = useState(false);
-  const [isOpenModal, setIsOpenModal] = useState(localStorage.getItem('LaVille_isWin'));
+  const [isOpenModal, setIsOpenModal] = useState(localStorage.getItem('LaVille_isWin') === 'true');
   const [isOpenModalRules, setIsOpenModalRules] = useState(!isOpenModal);
   const addCity = (city) => {
     if (citiesGuessed.length < 6 && cities.includes(city)) {
@@ -48,19 +48,19 @@ function Game() {
   }
   const getSquaresEmote = (dist) => {
     const distMax = 1100;
-    if (dist > distMax * 0.75) return '⬛⬛◾◾◾◾◾◾'
-    if (dist > distMax * 0.5) return '🟥🟥🟥🟥◾◾◾◾'
-    if (dist > distMax * 0.25) return '🟧🟧🟧🟧🟧🟧◾◾'
-    if (dist > 0) return '🟨🟨🟨🟨🟨🟨🟨◾'
+    if (dist > distMax * 0.75) return '⬛◾◾◾◾◾◾◾'
+    if (dist > distMax * 0.5) return '🟥🟥🟥◾◾◾◾◾'
+    if (dist > distMax * 0.25) return '🟧🟧🟧🟧🟧◾◾◾'
+    if (dist > 0) return '🟨🟨🟨🟨🟨🟨◾◾'
     return '🟩🟩🟩🟩🟩🟩🟩🟩'
   }
   const getResumeHTML = () => {
     return (
-      <div>
+      <pre>
         La Ville du {(new Date()).toLocaleDateString()} - {citiesGuessed.length} / 6 :<br /><br />
         {citiesGuessed.map((city, i) => <div key={i}>{getSquaresEmote(distanceLatLong(city.lat, cityOfTheDay.lat, city.lng, cityOfTheDay.lng))}</div>)}<br />
         <a href={window.location.href} style={{ color: 'white'}}>{ window.location.href }</a>
-      </div>
+      </pre>
     )
   }
   const share = () => {

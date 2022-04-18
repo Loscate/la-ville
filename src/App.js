@@ -5,11 +5,14 @@ import { useEffect } from "react";
 import Game from "./components/Game";
 
 export const cityOfTheDay = (() => {
-  const today = Date.now();
-  const startDate = new Date("01/01/1980").valueOf();
-  const nbDayBetween = Math.round((today - startDate) / (1000 * 60 * 60 * 24));
+  const today = new Date();
+  const date_to_reply = new Date('2012-10-11');
+  const timeinmilisec = today.getTime() - date_to_reply.getTime();
+  const nbDayBetween = Math.ceil((timeinmilisec) / (1000 * 60 * 60 * 24));
+  console.log(nbDayBetween)
   return citiesToGuess[nbDayBetween % citiesToGuess.length];
 })();
+console.log(cityOfTheDay)
 
 function App() {
   useEffect(() => {});

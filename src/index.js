@@ -6,8 +6,6 @@ import reportWebVitals from './reportWebVitals';
 
 const today = new Date();
 today.setHours(0,0,0,0);
-console.log(localStorage)
-console.log(localStorage.getItem('LaVille_isWin'), localStorage.getItem('LaVille_lastConn') < today)
 if (localStorage.getItem('LaVille_isWin') && localStorage.getItem('LaVille_lastConn') < today) {
   localStorage.setItem('LaVille_lastConn', new Date().valueOf())
   localStorage.setItem('LaVille_isWin', false);
